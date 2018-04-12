@@ -1,0 +1,73 @@
+<html>
+<head >
+<title>
+DocsApp
+</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/css/result.css">
+
+</head>
+
+<div class="main">
+<div style="text-align: right;">
+  <a href="/"><button class="btn btn-success" style="position: fixed;right: 8%;" ><i class="fa fa-chevron-circle-left"></i> Back</button></a>
+</div>
+  
+  <h2>Patient Details</h2>
+  <hr class="colorgraph">
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="&#xF002; Search for names.." title="Type in a name">
+  <table id="myTable" class="table">
+    <thead>
+      <tr class="success" style="text-align: center;">
+        <th style="text-align: center;">Firstname</th>
+        <th style="text-align: center;">Lastname</th>
+        <th style="text-align: center;">Age</th>
+        <th style="text-align: center;">DOB</th>
+        <th style="text-align: center;">Phone</th>
+        <th style="text-align: center;">Gender</th>
+        <th style="text-align: center;">Description</th>
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i=0; i < users.length; i++) { %>
+      <tr class="success" style="text-align: center;">
+        <td style="max-width:200px;word-wrap: break-word"><%= users[i].firstname %></td>
+        <td style="max-width:200px;word-wrap: break-word"><%= users[i].lastname %></td>
+         <td><%= users[i].age %></td>
+         <td><%= users[i].dob %></td>
+          <td><%= users[i].phone %></td>
+          <td><%= users[i].gender %></td>
+           <td style="max-width:200px;word-wrap: break-word"><%= users[i].comments %></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+  <hr class="colorgraph">
+</div>
+</div>
+</div>
+</div>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+</html>

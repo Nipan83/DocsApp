@@ -1,0 +1,101 @@
+<html>
+<head >
+<title>
+	DocsApp
+</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="stylesheets/css/index.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+</head>
+
+<div class="main">
+<div style="text-align: right;">
+  <a href="/getuser"><button class="btn btn-success" style="position: fixed;right: 8%;" ><i class="fa fa-chevron-circle-left"></i> Patient Details</button></a>
+</div>
+<h3 style="color: red"><%= message %></h3>
+<h2>Patient Information</h2>
+  <div class="wrapper" id="pages">
+	  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		<form role="form" action="/register" method="post">
+			
+			<hr class="colorgraph">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+                        <input type="text" name="firstname" id="firstname" class="form-control input-lg" placeholder="First Name" tabindex="1">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="lastname" id="lastname" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+					</div>
+				</div>
+			</div>
+      <div class="form-group" style="text-align: left;font-size: 1.2em">
+          Date of Birth
+           <input name="dob" onblur="ageCount()" type="date" class="form-control" id="dob" placeholder="Date of Birth">
+        </div>
+			<div class="form-group">
+				<input type="number" name="age" id="age" class="form-control input-lg" placeholder="Age" tabindex="3" readonly>
+			</div>
+			<div class="form-group">
+				<input type="number" name="phone" id="phone" class="form-control input-lg" placeholder="phone" tabindex="3">
+			</div>
+			
+			<div class="form-group" style="text-align: left; font-size: 1.2em">
+			Gender: 
+				<select name="gender" style="padding: 5px;">
+    				<option value="M">M</option>
+    				<option value="F">F</option>
+    				<option value="Other">Other</option>
+    
+  				</select>
+			</div>
+			
+			<div class="form-group">
+                        <input type="text" name="comments" id="comments" class="form-control input-lg" placeholder="Description" tabindex="1">
+			</div>
+			
+			
+			
+			<hr class="colorgraph">
+			<div class="row">
+				<div  class="col-xs-12 col-md-6"><input  type="submit" value="Register" class="btn btn-success btn-block btn-lg" tabindex="7"></div>
+				
+			</div>
+		</form>
+	</div>
+</div>
+</div>
+    
+</div>
+</div>
+
+<script type="text/javascript">
+function ageCount() {
+    var date1 = new Date();
+    var dob = document.getElementById("dob").value;
+    var date2 = new Date(dob);
+           
+    if (true) {
+        var y1 = date1.getFullYear();
+        //getting current year            
+        var y2 = date2.getFullYear();
+        //getting dob year            
+        var age = y1 - y2;
+        //calculating age                       
+        document.getElementById("age").value = age;
+        document.getElementById("age").focus ();
+        return true;
+    } 
+
+}
+</script>
+
+</html>
+
