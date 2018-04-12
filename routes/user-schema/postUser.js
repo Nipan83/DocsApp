@@ -11,7 +11,7 @@ router.post('/', function(req, res, next) {
     var len=req.body.phone.length;
     console.log(len);
     
-    if((len!=10 && len!=0) || req.body.phone==0){ return res.render('index', {message:"Invalid Phone Number!"});}
+    if(((len!=10 && len!=0) || req.body.phone==0) && req.body.phone){ return res.render('index', {message:"Invalid Phone Number!"});}
     if((req.body.age>130 || req.body.age<1) && req.body.age){ return res.render('index', {message:"Invalid Age!"});}
     
   User.create({
