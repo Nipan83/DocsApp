@@ -2,7 +2,7 @@
 
 This is a simple application implementation built on top `Node.js` and `Express.js` with `Mongoose.js` for `MongoDB` integration. 
 
-[![https://travis-ci.org/Nipan83/DocsApp.svg?branch=master)](https://travis-ci.org/Nipan83/DocsApp)
+[![Build Status](https://travis-ci.org/Nipan83/DocsApp.svg?branch=master)](https://travis-ci.org/Nipan83/DocsApp)
 
 ## Get Started:
 
