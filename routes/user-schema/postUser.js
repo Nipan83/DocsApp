@@ -9,9 +9,10 @@ var User = require('../../models/user');
 router.post('/', function(req, res, next) {
     console.log(req.body.age);
     var len=req.body.phone.length;
+    console.log(len);
     
       
-    if(len!=10){ return res.render('index', {message:"Invalid Phone Number!"});}
+    if(len!=10 && len!=0){ return res.render('index', {message:"Invalid Phone Number!"});}
     if((req.body.age>130 || req.body.age<1) && req.body.age){ return res.render('index', {message:"Invalid Age!"});}
     
   User.create({
