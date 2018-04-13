@@ -73,8 +73,6 @@ This route returns all the patients lists
 	# TESTING of APIs
 	npm test
 
-	# NOTE: Since email field is unique for registering a user. So register test case may fail after running npm test two times.
-
 
 ```
 
